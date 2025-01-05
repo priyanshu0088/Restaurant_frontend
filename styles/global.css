@@ -1,0 +1,359 @@
+/* Global Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: #121212; /* Dark background to make the circles pop */
+  color: #fff;
+  overflow: hidden; /* Hide overflowing circles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  position: relative; /* For background circles */
+  z-index: 10; /* Keep the card above the circles */
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  animation: fadeIn 2s ease;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1.2rem;
+  color: #ddd;
+  margin-bottom: 20px;
+  animation: fadeIn 2.5s ease;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Book Button */
+.book-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.book-button:hover {
+  background-color: #45a049;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Calendar Button */
+.calendar-button {
+  background-color: #008cba;
+  color: white;
+}
+
+.calendar-button:hover {
+  background-color: #007bb5;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Circular Background Animation */
+.background-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: moveCircle 10s infinite ease-in-out;
+}
+
+/* Circle Sizes and Positions */
+.circle1 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #ff9a9e, transparent);
+  top: 10%;
+  left: 20%;
+  animation-duration: 12s;
+}
+
+.circle2 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #fad0c4, transparent);
+  top: 60%;
+  left: 10%;
+  animation-duration: 15s;
+}
+
+.circle3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #fbc2eb, transparent);
+  top: 30%;
+  left: 70%;
+  animation-duration: 10s;
+}
+
+.circle4 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #a18cd1, transparent);
+  top: 80%;
+  left: 50%;
+  animation-duration: 18s;
+}
+
+/* Circle Animation */
+@keyframes moveCircle {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(50px, -50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Fade-In Animation for Text */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/*booking form styles */
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.form-input {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.success-message {
+  margin-top: 15px;
+  color: #4caf50;
+  font-weight: bold;
+  animation: fadeIn 1s ease;
+}
+
+.error-message {
+  margin-top: 15px;
+  color: #f44336;
+  font-weight: bold;
+  animation: fadeIn 1s ease;
+}
+/*calendar view styles*/
+
+.calendar-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.custom-calendar {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  backdrop-filter: blur(10px);
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.custom-calendar .react-calendar__tile {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgb(77, 24, 24);
+  border-radius: 8px;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.custom-calendar .react-calendar__tile:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.custom-calendar .react-calendar__tile--active {
+  background: #6c63ff;
+  color: white;
+}
+
+/* Bookings List */
+.booking-list {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+  color: white;
+  font-size: 18px;
+  text-align: left;
+}
+
+.booking-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.booking-item .time {
+  font-weight: bold;
+  color: #6c63ff;
+}
+
+.no-bookings {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+/* Feedback Messages */
+.loading-message {
+  color: white;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.error-message {
+  color: #ff4f4f;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* General Card Styling */
+.card {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/*////////////////////////////////////////////////////*/
+
+/* Booking Form Container */
+.booking-form-container {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Success Message */
+.success-message {
+  color: #6c63ff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Error Message */
+.error-message {
+  color: #ff4f4f;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* Form Styling */
+.booking-form input,
+.booking-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.booking-form button {
+  background-color: #6c63ff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-form button:hover {
+  background-color: #5748d9;
+}
+
