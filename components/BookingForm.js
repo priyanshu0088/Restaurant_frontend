@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "../styles/global.css"; // Reusing the global styles
-
+// import "../styles/global.css";
 const BookingForm = () => {
   const [formData, setFormData] = useState({
     name: "",
