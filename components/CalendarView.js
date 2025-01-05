@@ -1,7 +1,7 @@
 import Calendar from "react-calendar";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "../styles/global.css"; // Reuse global styles for consistency
+// import "../styles/global.css"; 
 import "react-calendar/dist/Calendar.css"; // React Calendar's default styles
 
 const CalendarView = () => {
